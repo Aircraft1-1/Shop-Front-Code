@@ -1,62 +1,61 @@
 def main_menu():
+        Мәзір_элементтері = {
+            "menu_one" : {
+                "Name" : 'Mikoyan-Gurevich MiG-23',
+                "Price" : '100000'
+            },
+        
+            "menu_two" : {
+                "Name" : 'Trump Mobile',
+                "Price" : '499'
+            },
     
-        menu_one = {}
-        menu_one['Name'] = 'Mikoyan-Gurevich MiG-23'
-        menu_one['Price'] = '100000'
-        print(menu_one)
+            "menu_three" : {
+                "Name" : 'S.T.A.L.K.E.R.: Call of Pripyat',
+                "Price" : '20'
+            },
         
-        menu_two = {}
-        menu_two['Name'] = 'Trump Mobile'
-        menu_two['Price'] = '499'
-        print(menu_two)
-    
-        menu_three = {}
-        menu_three['Name'] = 'S.T.A.L.K.E.R.: Call of Pripyat'
-        menu_three['Price'] = '20'
-        print(menu_three)
+            "menu_four" : {
+                "Name" : 'Hearts of Iron 4',
+                "Price" : '40'
+            },
         
-        menu_four = {}
-        menu_four['Name'] = 'Hearts of Iron 4'
-        menu_four['Price'] = '40'
-        print("Hearts of Iron 4")
-        
-        menu_five = {}
-        menu_five['Name'] = 'Jeff Gordons 2005 Daytona 500 Hat'
-        menu_five['Price'] = '1000'
-        print(menu_five)
+            "menu_five" : {
+                "Name" : 'Jeff Gordons 2005 Daytona 500 Hat',
+                "Price" : '1000'
+            },
         
         
-        menu_six = {}
-        menu_six['Name'] = 'Kyle Pettys No Fear Racing'
-        menu_six['Price'] = '70'
-        print(menu_six)
+            "menu_six" : {
+                "Name" : 'Kyle Pettys No Fear Racing',
+                "Price" : '70'
+            },
         
-        menu_seven = {}
-        menu_seven['Name'] = 'Fear & Hunger 2: Termina'
-        menu_seven['Price'] = '132611'
-        print(menu_seven)
+            "menu_seven" : {
+                "Name" : 'Fear & Hunger 2: Termina',
+                "Price" : '132611'
+            },
         
-        menu_eight = {}
-        menu_eight['Name'] = 'Terminus Decree'
-        menu_eight['Price'] = '40000'
-        print(menu_eight)
-    
-    
-        Мәзір_элементтері = [menu_one, menu_two, menu_three, menu_four, menu_five, menu_six, menu_seven, menu_eight]
+            "menu_eight" : {
+                "Name" : 'Terminus Decree',
+                "Price" : '40000'
+            }
+        }
     
         print("(---☆Берёзка☆---)")
-        for i, items in enumerate(Мәзір_элементтері, 1):
-             print(f"{i}. {items['Name']} - ${items['Price']}")
-        
-    
+        for i, key in enumerate(Мәзір_элементтері, 1):
+            item = Мәзір_элементтері[key]
+            print(f"{i}. {Мәзір_элементтері['Name']} - ${Мәзір_элементтері['Price']}")
     #Loops forever
         while True:
     #Code for picking an item
       #Мәзір_элементтері
             choice = input("\nSelect items 1-8 or leave: ")
             if choice.isdigit() and 1 <= int(choice) <= len(Мәзір_элементтері):
-                selected = items[int(choice)]
-                print(f"\nCustomer selected: {selected['Name']} for ${selected['Price']}")
+                key_list = list(Мәзір_элементтері.keys())
+                selected_key = key_list[int(choice)- 1]
+                selected_item = Мәзір_элементтері[selected_key]
+                print(f"\nCustomer selected: {selected_item['Name']} for ${selected_item['Price']}")
             
             elif choice == 'whatever':
 
@@ -70,7 +69,7 @@ def main_menu():
                 print("Select a menu item or leave...")
             
             
-            
+             
 
  
 
