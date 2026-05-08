@@ -54,7 +54,9 @@ def main_menu():
       #Мәзір_элементтері
             choice = input("\nSelect items 1-8 or leave: ")
             if choice.isdigit() and 1 <= int(choice) <= len(Мәзір_элементтері):
-                selected = item[int(choice)]
+                keys = list(Мәзір_элементтері.keys())
+                selected_key = keys[int(choice) - 1]
+                selected = Мәзір_элементтері[selected_key]
                 print(f"\nCustomer selected: {selected['Name']} for ${selected['Price']}")
             
             elif choice == 'whatever':
