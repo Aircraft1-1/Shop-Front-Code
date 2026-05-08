@@ -59,7 +59,7 @@ def main_menu():
                 selected = Мәзір_элементтері[selected_key]
                 print(f"\nCustomer selected: {selected['Name']} for ${selected['Price']}")
             
-            elif choice == 'whatever':
+            elif choice.lower() == 'leave':
 
                 print("Leaving...")
 
