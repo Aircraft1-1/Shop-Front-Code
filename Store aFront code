@@ -43,19 +43,19 @@ def main_menu():
         }
     
         print("(---☆Берёзка☆---)")
-        for i, key in enumerate(Мәзір_элементтері, 1):
-            item = Мәзір_элементтері[key]
-            print(f"{i}. {Мәзір_элементтері['Name']} - ${Мәзір_элементтері['Price']}")
+        for i, items in enumerate(Мәзір_элементтері, 1):
+            item = Мәзір_элементтері[items]
+            print(f"{i}. {item['Name']} - ${item['Price']}")
+        
+        
     #Loops forever
         while True:
     #Code for picking an item
       #Мәзір_элементтері
             choice = input("\nSelect items 1-8 or leave: ")
             if choice.isdigit() and 1 <= int(choice) <= len(Мәзір_элементтері):
-                key_list = list(Мәзір_элементтері.keys())
-                selected_key = key_list[int(choice)- 1]
-                selected_item = Мәзір_элементтері[selected_key]
-                print(f"\nCustomer selected: {selected_item['Name']} for ${selected_item['Price']}")
+                selected = item[int(choice)]
+                print(f"\nCustomer selected: {selected['Name']} for ${selected['Price']}")
             
             elif choice == 'whatever':
 
