@@ -47,7 +47,7 @@ def main_menu():
             item = Мәзір_элементтері[items]
             print(f"{i}. {item['Name']} - ${item['Price']}")
         
-        
+        sales_tax = item['Price'] * (6 // 100)
     #Loops forever
         while True:
     #Code for picking an item
@@ -58,6 +58,8 @@ def main_menu():
                 selected_key = keys[int(choice) - 1]
                 selected = Мәзір_элементтері[selected_key]
                 print(f"\nCustomer selected: {selected['Name']} for ${selected['Price']}")
+                print(f"\nSales Tax: {sales_tax}")
+            
             
             elif choice.lower() == 'leave':
 
