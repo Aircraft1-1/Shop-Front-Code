@@ -1,46 +1,4 @@
 def main_menu():
-        Мәзір_элементтері = {
-            "menu_one" : {
-                "Name" : 'Mikoyan-Gurevich MiG-23',
-                "Price" : '100000'
-            },
-        
-            "menu_two" : {
-                "Name" : 'Trump Mobile',
-                "Price" : '499'
-            },
-    
-            "menu_three" : {
-                "Name" : 'S.T.A.L.K.E.R.: Call of Pripyat',
-                "Price" : '20'
-            },
-        
-            "menu_four" : {
-                "Name" : 'Hearts of Iron 4',
-                "Price" : '40'
-            },
-        
-            "menu_five" : {
-                "Name" : 'Jeff Gordons 2005 Daytona 500 Hat',
-                "Price" : '1000'
-            },
-        
-        
-            "menu_six" : {
-                "Name" : 'Kyle Pettys No Fear Racing',
-                "Price" : '70'
-            },
-        
-            "menu_seven" : {
-                "Name" : 'Fear & Hunger 2: Termina',
-                "Price" : '132611'
-            },
-        
-            "menu_eight" : {
-                "Name" : 'Terminus Decree',
-                "Price" : '40000'
-            }
-        }
         class Мәзір_элементтері_custo:
             def _init_(self, name, price):
                 self.name = name
