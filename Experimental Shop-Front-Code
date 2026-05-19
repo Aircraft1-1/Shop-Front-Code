@@ -1,46 +1,46 @@
 def main_menu():
         class Мәзір_элементтері_custo:
-            def _init_(self, name, price):
+            def __init__(self, name, price):
                 self.name = name
                 self.price = price
                 
-            menu_one = Мәзір_элементтері_custo("Mikoyan-Gurevich MiG-23",100000)
+        menu_one = Мәзір_элементтері_custo("Mikoyan-Gurevich MiG-23",100000)
             
-            menu_two = Мәзір_элементтері_custo("Trump Mobile",499)
+        menu_two = Мәзір_элементтері_custo("Trump Mobile",499)
             
-            menu_three = Мәзір_элементтері_custo("S.T.A.L.K.E.R.: Call of Pripyat",20) 
+        menu_three = Мәзір_элементтері_custo("S.T.A.L.K.E.R.: Call of Pripyat",20) 
             
-            mmenu_four = Мәзір_элементтері_custo("Hearts of Iron 4",40)
+        mmenu_four = Мәзір_элементтері_custo("Hearts of Iron 4",40)
             
-            menu_five = Мәзір_элементтері_custo("Jeff Gordons 2005 Daytona 500 Hat",1000)
+        menu_five = Мәзір_элементтері_custo("Jeff Gordons 2005 Daytona 500 Hat",1000)
             
-            menu_six = Мәзір_элементтері_custo("Kyle Pettys No Fear Racing",70)
+        menu_six = Мәзір_элементтері_custo("Kyle Pettys No Fear Racing",70)
             
-            menu_seven = Мәзір_элементтері_custo("Fear & Hunger 2: Termina",132611)
+        menu_seven = Мәзір_элементтері_custo("Fear & Hunger 2: Termina",132611)
             
-            menu_eight = Мәзір_элементтері_custo("Terminus Decree",40000)
+        menu_eight = Мәзір_элементтері_custo("Terminus Decree",40000)
     
         class Мәзір_элементтері_owner:
-            def _init_(self, name, price, supply):
+            def __init__(self, name, price, supply):
                 self.name = name
                 self.price = price
                 self.supply = supply
             
-            menu_one = Мәзір_элементтері_owner("Mikoyan-Gurevich MiG-23",100000,2)
+        menu_one = Мәзір_элементтері_owner("Mikoyan-Gurevich MiG-23",100000,2)
             
-            menu_two = Мәзір_элементтері_owner("Trump Mobile",499,1000)
+        menu_two = Мәзір_элементтері_owner("Trump Mobile",499,1000)
             
-            menu_three = Мәзір_элементтері_owner("S.T.A.L.K.E.R.: Call of Pripyat",20,20) 
+        menu_three = Мәзір_элементтері_owner("S.T.A.L.K.E.R.: Call of Pripyat",20,20) 
             
-            mmenu_four = Мәзір_элементтері_owner("Hearts of Iron 4",40,25)
+        mmenu_four = Мәзір_элементтері_owner("Hearts of Iron 4",40,25)
             
-            menu_five = Мәзір_элементтері_owner("Jeff Gordons 2005 Daytona 500 Hat",1000,4)
+        menu_five = Мәзір_элементтері_owner("Jeff Gordons 2005 Daytona 500 Hat",1000,4)
             
-            menu_six = Мәзір_элементтері_owner("Kyle Pettys No Fear Racing",70,15)
+        menu_six = Мәзір_элементтері_owner("Kyle Pettys No Fear Racing",70,15)
             
-            menu_seven = Мәзір_элементтері_owner("Fear & Hunger 2: Termina",132611,30)
+        menu_seven = Мәзір_элементтері_owner("Fear & Hunger 2: Termina",132611,30)
             
-            menu_eight = Мәзір_элементтері_owner("Terminus Decree",40000,1)
+        menu_eight = Мәзір_элементтері_owner("Terminus Decree",40000,1)
             
     
     
@@ -52,7 +52,7 @@ def main_menu():
     
     
         print("(---☆Берёзка☆---)")
-        for i, items in enumerate(Мәзір_элементтері, 1):
+        for i, items in enumerate(Мәзір_элементтері_custo, 1):
             item = Мәзір_элементтері[items]
             print(f"{i}. {item['Name']} - ${item['Price']}")
         
