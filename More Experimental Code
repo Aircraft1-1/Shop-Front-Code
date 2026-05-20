@@ -1,8 +1,8 @@
 def main_menu():
         class Мәзір_элементтері_custo:
             def __init__(self, name, price):
-                self.name = ["Mikoyan-Gurevich MiG-23","Trump Mobile","S.T.A.L.K.E.R.: Call of Pripyat","Hearts of Iron 4","Jeff Gordons 2005 Daytona 500 Hat","Kyle Pettys No Fear Racing","Fear & Hunger 2: Termina","Terminus Decree"]
-                self.price = [100000, 499, 20, 49, 1000, 70, 132611, 40000]
+                self.name = name
+                self.price = price
     
         class Мәзір_элементтері_owner:
             def __init__(self, name, price, supply):
@@ -11,94 +11,44 @@ def main_menu():
                 self.price = price
                 self.supply = supply
             
-        menu_one = Мәзір_элементтері_owner("Mikoyan-Gurevich MiG-23",100000,2)
-            
-        menu_two = Мәзір_элементтері_owner("Trump Mobile",499,1000)
-            
-        menu_three = Мәзір_элементтері_owner("S.T.A.L.K.E.R.: Call of Pripyat",20,20) 
-            
-        mmenu_four = Мәзір_элементтері_owner("Hearts of Iron 4",40,25)
-            
-        menu_five = Мәзір_элементтері_owner("Jeff Gordons 2005 Daytona 500 Hat",1000,4)
-            
-        menu_six = Мәзір_элементтері_owner("Kyle Pettys No Fear Racing",70,15)
-            
-        menu_seven = Мәзір_элементтері_owner("Fear & Hunger 2: Termina",132611,30)
-            
-        menu_eight = Мәзір_элементтері_owner("Terminus Decree",40000,1)
-            
-    
-        best_menu = Мәзір_элементтері_custo()
-    
-    
-    
-    
-    
-    
-    
+        customer_menu =[ 
+            Мәзір_элементтері_custo("Mikoyan-Gurevich MiG-23",100000), 
+            Мәзір_элементтері_custo("Trump Mobile",499), 
+            Мәзір_элементтері_custo("S.T.A.L.K.E.R: Call of Pripyat",20), 
+            Мәзір_элементтері_custo("Hearts of Iron 4", 40), 
+            Мәзір_элементтері_custo("Jeff Gordons 2005 Daytona 500 Hat", 1000), 
+            Мәзір_элементтері_custo("Kyle Pettys No Fear Racing", 70),
+            Мәзір_элементтері_custo("Fear & Hunger 2: Termina", 132611),
+            Мәзір_элементтері_custo("Terminus Decree", 40000)
+        ]
+        
+        owner_menu = [
+            Мәзір_элементтері_owner("Mikoyan-Gurevich MiG-23",100000,2),
+            Мәзір_элементтері_owner("Trump Mobile",499,1000),
+            Мәзір_элементтері_owner("S.T.A.L.K.E.R: Call of Pripyat",20,20),
+            Мәзір_элементтері_owner("Hearts of Iron 4", 40,25),
+            Мәзір_элементтері_owner("Jeff Gordons 2005 Daytona 500 Hat", 1000,4),
+            Мәзір_элементтері_owner("Kyle Pettys No Fear Racing", 70,15),
+            Мәзір_элементтері_owner("Fear & Hunger 2: Termina", 132611,30),
+            Мәзір_элементтері_owner("Terminus Decree", 40000,1)
+        ]
         print("(---☆Берёзка☆---)")
-        for i, item in enumerate(best_menu.name):
-            item = Мәзір_элементтері[items]
-            print(f"{i}. {item['Name']} - ${item['Price']}")
         
-        sales_tax = item['Price'] * (6 // 100)
-    #Loops forever
-        while True:
-    #Code for picking an item
-      #Мәзір_элементтері
-            choice = input("\nSelect items 1-8 or leave: ")
-            if choice.isdigit() and 1 <= int(choice) <= len(Мәзір_элементтері):
-                keys = list(Мәзір_элементтері.keys())
-                selected_key = keys[int(choice) - 1]
-                selected = Мәзір_элементтері[selected_key]
-                print(f"\nCustomer selected: {selected['Name']} for ${selected['Price']}")
-                print(f"\nSales Tax: {sales_tax}")
-            
-            
-            elif choice.lower() == 'leave':
-
-                print("Leaving...")
-
-                break
-            
-            
-            
-            else:
-                print("Select a menu item or leave...")
-            
-            
-             
-
- 
-
         
-
+        for i, item in enumerate(customer_menu, start = 1):
+            print(f"{i}. {item.name} - ${item.price:,}")
         
-
         
-
- 
-
-# Tells python to run main_menu()
-
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 main_menu()
-
- 
-
- 
-
-"""
-
-# Tells python to run main_menu() but ONLY if this is not an imported python file.
-
- 
-
-if __name__ == "__main__":
-
-    main_menu()
-
- 
-
-# You will need to know this in the future
-
-"""
