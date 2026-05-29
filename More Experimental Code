@@ -42,9 +42,19 @@ def main_menu():
         
         print("©Buryatia StoreFronts Inc.")
         
+        
+        
+        
+        
+        #CUSTOMER SUBMENU
+    def customer_submenu():
+        print("\n---☆Меню для клиентов☆---")
+        for i, item in enumerate(customer_menu, start = 1):
+            print(f"{i}. {item.name} - %{item.price:,}")
+            
+        sales_tax = 0.07
+        
         while True:
-    #Code for picking an item
-      #Мәзір_элементтері
             choice = input("\nSelect items 1-8 or leave: ")
             if choice.isdigit() and 1 <= int(choice) <= len(customer_menu):
                 index = int(choice) - 1
@@ -54,16 +64,66 @@ def main_menu():
                 print(f"\nSales Tax: {sales_tax * 100}%")
             
             
-            elif choice.lower() == 'leave':
+            elif choice.lower() == 'back':
 
-                print("Leaving...")
+                print("Returning...")
 
                 break
             
             
             
             else:
-                print("Select a menu item or leave...")
+                print("ⓘINVALIDⓘ")
+        
+        
+    def owner_submenu():
+        print("\n---☆Меню владельца☆---")
+        for i, item in enumerate(owner_menu, start = 1):
+            print(f"{i}. {item.name} |?| Stock: {item.supply} |?| Price: ${item.price:,}")
+        while True:
+            choice = input("\nSelect items 1-8 to view or return: ")
+            if choice.isdigit() and 1 <= int(choice) <= len(owner_menu):
+                selected = owner_menu[int(choice) - 1]
+                print(f"\n[Managing] {selected.name}")
+                print(f"Current Stock: {selected.supply}")
+            elif choice.lower() == 'back':
+                print("Returning...")
+                break
+            else:
+                print("ⓘINVALIDⓘ")
+        
+        
+        
+        
+        
+        
+    while True:
+        print("\n+++++++++++++++++++++++++++++++++++++++++")
+        print("(          ☆Берёзка☆          )")
+        print("+++++++++++++++++++++++++++++++++++++++++")
+        print("1. Enter as Customer")
+        print("2. Enter as Owner")
+        print("3. Leave store")
+        
+        chosen = input("\nChoose an option (1-3): ")
+        if chosen == "1":
+            customer_submenu()
+        elif chosen == "2":
+            owner_submenu()
+        elif chosen == "3":
+            print("Leaving store... До свидания!")
+            break
+        else:
+            print("ⓘINVALIDⓘ"")
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
