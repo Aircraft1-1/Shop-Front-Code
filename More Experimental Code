@@ -1,102 +1,107 @@
-def main_menu():
-        class Мәзір_элементтері_custo:
-            def __init__(self, name, price):
-                self.name = name
-                self.price = price
+class Мәзір_элементтері_custo:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+    #Class #2
+class Мәзір_элементтері_owner:
+    def __init__(self, name, price, supply):
+        self.name = name
+        self.price = price
+        self.supply = supply
+    #INFORMATION FOR CUSTOMER MENU    
+customer_menu =[ 
+    Мәзір_элементтері_custo("Mikoyan-Gurevich MiG-23",100000), 
+    Мәзір_элементтері_custo("Trump Mobile",499), 
+    Мәзір_элементтері_custo("S.T.A.L.K.E.R: Call of Pripyat",20), 
+    Мәзір_элементтері_custo("Hearts of Iron 4", 40), 
+    Мәзір_элементтері_custo("Jeff Gordons 2005 Daytona 500 Hat", 1000), 
+    Мәзір_элементтері_custo("Kyle Pettys No Fear Racing", 70),
+    Мәзір_элементтері_custo("Fear & Hunger 2: Termina", 132611),
+    Мәзір_элементтері_custo("Terminus Decree", 40000)
+]
+    #INFORMATION FOR OWNER MENU
+owner_menu = [
+    Мәзір_элементтері_owner("Mikoyan-Gurevich MiG-23",100000,2),
+    Мәзір_элементтері_owner("Trump Mobile",499,1000),
+    Мәзір_элементтері_owner("S.T.A.L.K.E.R: Call of Pripyat",20,20),
+    Мәзір_элементтері_owner("Hearts of Iron 4", 40,25),
+    Мәзір_элементтері_owner("Jeff Gordons 2005 Daytona 500 Hat", 1000,4),
+    Мәзір_элементтері_owner("Kyle Pettys No Fear Racing", 70,15),
+    Мәзір_элементтері_owner("Fear & Hunger 2: Termina", 132611,30),
+    Мәзір_элементтері_owner("Terminus Decree", 40000,1)
+]
+print("(---☆Берёзка☆---)")
+        
+        
+for i, item in enumerate(customer_menu, start = 1):
+    print(f"{i}. {item.name} - ${item.price:,}")
+        
+sales_tax = 0.07
+        
+print("©Buryatia StoreFronts Inc.")
+        
+        
+        
+        
+        
+    #CUSTOMER SUBMENU
+def customer_submenu():
+    print("\n---☆Меню для клиентов☆---")
+    for i, item in enumerate(customer_menu, start = 1):
+        print(f"{i}. {item.name} - %{item.price:,}")
+            
+    sales_tax = 0.07
+        
+        
+        
+    while True:
+        choice = input("\nSelect items 1-8 or leave: ")
+        if choice.isdigit() and 1 <= int(choice) <= len(customer_menu):
+            index = int(choice) - 1
+            selected = customer_menu[index]
+            
+            print(f"\nCustomer selected: {selected.name} for ${selected.price:,}")
+            print(f"\nSales Tax: {sales_tax * 100}%")
+            
+            
+        elif choice.lower() == 'back':
+
+            print("Returning...")
+
+            break
+            
+            
+            
+        else:
+            print("ⓘINVALIDⓘ")
+        
+    #OWNER SUBMENU    
+def owner_submenu():
+    print("\n---☆Меню владельца☆---")
+    for i, item in enumerate(owner_menu, start = 1):
+        print(f"{i}. {item.name} |?| Stock: {item.supply} |?| Price: ${item.price:,}")
+    while True:
+        choice = input("\nSelect items 1-8 to view or return: ")
+        if choice.isdigit() and 1 <= int(choice) <= len(owner_menu):
+            selected = owner_menu[int(choice) - 1]
+            print(f"\n[Managing] {selected.name}")
+            print(f"Current Stock: {selected.supply}")
+            print(f"Current Price: ${selected.price}")
+        elif choice.lower() == 'back':
+            print("Returning...")
+            break
+        else:
+            print("ⓘINVALIDⓘ")
+        
+        
+        
+        
+        
+    #MAIN MENU
     
-        class Мәзір_элементтері_owner:
-            def __init__(self, name, price, supply):
-                pass
-                self.name = name
-                self.price = price
-                self.supply = supply
-            
-        customer_menu =[ 
-            Мәзір_элементтері_custo("Mikoyan-Gurevich MiG-23",100000), 
-            Мәзір_элементтері_custo("Trump Mobile",499), 
-            Мәзір_элементтері_custo("S.T.A.L.K.E.R: Call of Pripyat",20), 
-            Мәзір_элементтері_custo("Hearts of Iron 4", 40), 
-            Мәзір_элементтері_custo("Jeff Gordons 2005 Daytona 500 Hat", 1000), 
-            Мәзір_элементтері_custo("Kyle Pettys No Fear Racing", 70),
-            Мәзір_элементтері_custo("Fear & Hunger 2: Termina", 132611),
-            Мәзір_элементтері_custo("Terminus Decree", 40000)
-        ]
-        
-        owner_menu = [
-            Мәзір_элементтері_owner("Mikoyan-Gurevich MiG-23",100000,2),
-            Мәзір_элементтері_owner("Trump Mobile",499,1000),
-            Мәзір_элементтері_owner("S.T.A.L.K.E.R: Call of Pripyat",20,20),
-            Мәзір_элементтері_owner("Hearts of Iron 4", 40,25),
-            Мәзір_элементтері_owner("Jeff Gordons 2005 Daytona 500 Hat", 1000,4),
-            Мәзір_элементтері_owner("Kyle Pettys No Fear Racing", 70,15),
-            Мәзір_элементтері_owner("Fear & Hunger 2: Termina", 132611,30),
-            Мәзір_элементтері_owner("Terminus Decree", 40000,1)
-        ]
-        print("(---☆Берёзка☆---)")
-        
-        
-        for i, item in enumerate(customer_menu, start = 1):
-            print(f"{i}. {item.name} - ${item.price:,}")
-            
-        sales_tax = 0.07
-        
-        print("©Buryatia StoreFronts Inc.")
-        
-        
-        
-        
-        
-        #CUSTOMER SUBMENU
-    def customer_submenu():
-        print("\n---☆Меню для клиентов☆---")
-        for i, item in enumerate(customer_menu, start = 1):
-            print(f"{i}. {item.name} - %{item.price:,}")
-            
-        sales_tax = 0.07
-        
-        while True:
-            choice = input("\nSelect items 1-8 or leave: ")
-            if choice.isdigit() and 1 <= int(choice) <= len(customer_menu):
-                index = int(choice) - 1
-                selected = customer_menu[index]
-                
-                print(f"\nCustomer selected: {selected.name} for ${selected.price:,}")
-                print(f"\nSales Tax: {sales_tax * 100}%")
-            
-            
-            elif choice.lower() == 'back':
-
-                print("Returning...")
-
-                break
-            
-            
-            
-            else:
-                print("ⓘINVALIDⓘ")
-        
-        
-    def owner_submenu():
-        print("\n---☆Меню владельца☆---")
-        for i, item in enumerate(owner_menu, start = 1):
-            print(f"{i}. {item.name} |?| Stock: {item.supply} |?| Price: ${item.price:,}")
-        while True:
-            choice = input("\nSelect items 1-8 to view or return: ")
-            if choice.isdigit() and 1 <= int(choice) <= len(owner_menu):
-                selected = owner_menu[int(choice) - 1]
-                print(f"\n[Managing] {selected.name}")
-                print(f"Current Stock: {selected.supply}")
-            elif choice.lower() == 'back':
-                print("Returning...")
-                break
-            else:
-                print("ⓘINVALIDⓘ")
-        
-        
-        
-        
-        
-        
+def main_menu():
+    print("(---☆Берёзка☆---)")
+    print("©Buryatia StoreFronts Inc.")
     while True:
         print("\n+++++++++++++++++++++++++++++++++++++++++")
         print("(          ☆Берёзка☆          )")
@@ -114,7 +119,7 @@ def main_menu():
             print("Leaving store... До свидания!")
             break
         else:
-            print("ⓘINVALIDⓘ"")
+            print("ⓘINVALIDⓘ")
         
         
         
