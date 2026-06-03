@@ -60,19 +60,23 @@ def customer_submenu():
             index = int(choice) - 1
             selected = customer_menu[index]
             
+            tax_amount = selected.price * sales_tax
+            total_price = selected.price + tax_amount
+            
+            
             print(f"\nCustomer selected: {selected.name} for ${selected.price:,}")
             print("+++++++++++++++++++++++++++++++++++++++++")
             print("    RECIEPT    ")
             print("Date: 06/02/26")
             print("Sold: Buryatia StoreFronts")
             
-            print(f"\nSales Tax: {sales_tax * 100}%")
-            print(f"\nTotal: ${selected.price - sales_tax * 100}")
+            print(f"Sales Tax ({sales_tax * 100}%): ${tax_amount:,.2f}")
+            print(f"Total: ${total_price:,.2f}")
             print(f"\nSignature:x___________________")
+            print("+++++++++++++++++++++++++++++++++++++++++")
             
             
-            
-        elif choice.lower() == 'back':
+        elif choice.lower() == 'leave':
 
             print("Returning...")
 
@@ -85,9 +89,38 @@ def customer_submenu():
         
     #OWNER SUBMENU    
 def owner_submenu():
-    print("\n---☆Меню владельца☆---")
-    for i, item in enumerate(owner_menu, start = 1):
-        print(f"{i}. {item.name} |?| Stock: {item.supply} |?| Price: ${item.price:,}")
+    while True:
+        print("\n---☆Меню владельца☆---")
+        for i, item in enumerate(owner_menu, start = 1):
+            print(f"{i}. {item.name} |?| Stock: {item.supply} |?| Price: ${item.price:,}")
+    
+        print(f"\n{len(owner_menu) + 1}. ➕ Add a new item?")
+        choice = input(f"\nSelect items 1-{len(owner_menu) + 1} or type 'return': ")
+    
+        if choice.isdigit():
+            choice_num = int(choice)
+        
+            if choice_num == len(owner_menu) + 1:
+                name = input("Enter item name: ")
+                price = int(input("Enter item price: "))
+                supply = int(input("Enter intial supply: "))
+            
+                customer_menu.append(Мәзір_элементтері_custo(name, price))
+                owner_menu.append(Мәзір_элементтері_owner(name, price, supply))
+                print(f"✔️ {name} added!")
+        
+            else:
+                print("ⓘINVALIDⓘ")
+   
+        elif choice.lower() == 'return':
+        
+            print("Returning...")
+        
+        
+    
+    else:
+        print("ⓘINVALIDⓘ")
+    
     while True:
         choice = input("\nSelect items 1-8 to view or return: ")
         if choice.isdigit() and 1 <= int(choice) <= len(owner_menu):
