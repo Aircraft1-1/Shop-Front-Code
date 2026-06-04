@@ -95,7 +95,8 @@ def owner_submenu():
             print(f"{i}. {item.name} |?| Stock: {item.supply} |?| Price: ${item.price:,}")
     
         print(f"\n{len(owner_menu) + 1}. ➕ Add a new item?")
-        choice = input(f"\nSelect items 1-{len(owner_menu) + 1} or type 'return': ")
+        print(f"\n{len(owner_menu) + 2}.  Remove an item?")
+        choice = input(f"\nSelect options 1-{len(owner_menu) + 2} or type 'return': ")
     
         if choice.isdigit():
             choice_num = int(choice)
@@ -108,18 +109,32 @@ def owner_submenu():
                 customer_menu.append(Мәзір_элементтері_custo(name, price))
                 owner_menu.append(Мәзір_элементтері_owner(name, price, supply))
                 print(f"✔️ {name} added!")
+                
+            elif choice_num == len(owner_menu) + 2:
+                name = input("Enter item name: ")
+                customer_menu.remove(Мәзір_элементтері_custo(name, price))
+                owner_menu.remove(Мәзір_элементтері_owner(name, price, supply))
+                print(f"✔️ {name} removed!")
         
-            else:
-                print("ⓘINVALIDⓘ")
-   
         elif choice.lower() == 'return':
         
             print("Returning...")
+            break
+        
+    
+        else:
+            print("ⓘINVALIDⓘ")
+    
+        
+        
         
         
     
-    else:
-        print("ⓘINVALIDⓘ")
+    
+    
+    
+    
+    
     
     while True:
         choice = input("\nSelect items 1-8 to view or return: ")
